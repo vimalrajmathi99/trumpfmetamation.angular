@@ -48,8 +48,9 @@ export class App implements OnInit {
   }
 
   shortenUrl() {
-    if (!this.newUrl.originalURL?.trim()) {
-      this.toastr.warning('Please enter a valid URL', 'Validation Error');
+    const url = this.newUrl.originalURL?.trim() || '';
+    if (!url || (!url.startsWith('http://') && !url.startsWith('https://'))) {
+      this.toastr.warning('Please enter a valid URL (must start with http:// or https://)', 'Validation Error');
       return;
     }
     this.tinyurlService.addUrl(this.newUrl).subscribe({

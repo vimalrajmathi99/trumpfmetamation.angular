@@ -1,0 +1,30 @@
+.btn-custom-purple {
+  /* Pink to purple gradient from reference image */
+  background: linear-gradient(90deg, #f04276 0%, #9c27b0 100%);
+  border: none;
+  transition: all 0.3s ease;
+  color: white;
+
+  &:hover:not(:disabled) {
+    /* Slightly darker version for hover effect */
+    background: linear-gradient(90deg, #d33563 0%, #7b1fa2 100%);
+    box-shadow: 0 4px 12px rgba(156, 39, 176, 0.4);
+    transform: translateY(-1px);
+  }
+
+  &:disabled {
+    background: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.8;
+  }
+}
+
+.border-custom-purple {
+  border-color: #9c27b0 !important;
+
+  &:focus {
+    border-color: #9c27b0 !important;
+    box-shadow: 0 0 0 0.25rem rgba(156, 39, 176, 0.25) !important;
+  }
+}

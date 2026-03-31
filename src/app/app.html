@@ -6,38 +6,40 @@
 
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="col-md-10">
+    <div class="col-md-8">
       <div class="card shadow border-0 mb-5 rounded-4">
         <div class="card-body p-4 p-md-5 text-center">
           <h2 class="fw-bold mb-4">Shorten a long link</h2>
 
-          <div class="input-group input-group-lg mb-3 shadow-sm rounded-3">
+          <div class="d-flex flex-column flex-md-row align-items-md-center mb-4 gap-3">
             <input
               type="url"
-              class="form-control border-0 px-4"
+              class="form-control form-control-lg border-custom-purple border-2 px-4 shadow-sm rounded-3"
               placeholder="Enter long link here"
               [(ngModel)]="newUrl.originalURL"
               name="originalURL"
             />
+            <div class="form-check text-start mb-0 flex-shrink-0 ms-1 me-3">
+              <input
+                class="form-check-input shadow-sm"
+                type="checkbox"
+                id="isPrivateCheck"
+                [(ngModel)]="newUrl.isPrivate"
+                name="isPrivate"
+              />
+              <label class="form-check-label text-muted" for="isPrivateCheck"> Is Private </label>
+            </div>
+          </div>
+
+          <div class="d-grid mb-2">
             <button
-              class="btn btn-success px-4 fw-bold"
+              class="btn btn-custom-purple btn-lg fw-bold text-white shadow-sm rounded-3 py-3"
               type="button"
               (click)="shortenUrl()"
               [disabled]="!newUrl.originalURL"
             >
               Generate
             </button>
-          </div>
-
-          <div class="form-check text-start ms-2">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              id="isPrivateCheck"
-              [(ngModel)]="newUrl.isPrivate"
-              name="isPrivate"
-            />
-            <label class="form-check-label text-muted" for="isPrivateCheck"> Is Private </label>
           </div>
         </div>
       </div>
