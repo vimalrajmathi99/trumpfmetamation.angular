@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/426be54a-974e-4cbf-baf8-a74935cfcbc1/resourceGroups/Vimal-RG/providers/Microsoft.Web/sites/vimaltinyurl",
+    "appService.deploySubpath": "dist/tinyurlapp/browser"
+}
